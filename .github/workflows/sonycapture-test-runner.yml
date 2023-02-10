@@ -8,9 +8,10 @@ jobs:
   build:
     runs-on: ubuntu-latest
     # Explicitly make it stop on error?
+    continue-on-error: false
     strategy:
+      # This is default?
       fail-fast: true
-      continue-on-error: false
     steps:
       - name: Check-out
         uses: actions/checkout@v3
