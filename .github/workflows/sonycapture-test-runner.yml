@@ -1,0 +1,25 @@
+name: Bash not exiting on error reproducer
+
+on:
+  # Enable manual trigger:
+  workflow_dispatch:
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    # Explicitly make it stop?
+    # strategy:
+    #  fail-fast: true
+    #  continue-on-error: false
+    steps:
+      - name: Check-out
+        uses: actions/checkout@v3
+
+      - name: Get version
+        run: /usr/bin/bash --version
+        shell: bash
+
+      - name: Run shell
+        run: ./test.sh
+        shell: bash
+
