@@ -7,10 +7,10 @@ on:
 jobs:
   build:
     runs-on: ubuntu-latest
-    # Explicitly make it stop?
-    # strategy:
-    #  fail-fast: true
-    #  continue-on-error: false
+    # Explicitly make it stop on error?
+    strategy:
+      fail-fast: true
+      continue-on-error: false
     steps:
       - name: Check-out
         uses: actions/checkout@v3
