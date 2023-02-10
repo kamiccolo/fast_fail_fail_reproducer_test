@@ -20,7 +20,11 @@ jobs:
         run: /usr/bin/bash --version
         shell: bash
 
-      - name: Run shell
+      - name: Run should fail in general
+        run: ./this_should_fail.sh
+        shell: bash
+
+      - name: Run should fail in the middle
         run: ./test.sh
         shell: bash
 
